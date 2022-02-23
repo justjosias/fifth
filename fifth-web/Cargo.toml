@@ -1,0 +1,32 @@
+[package]
+name = "fifth-web"
+version = "0.1.0"
+authors = ["Josias <me@josias.dev>"]
+description = "A small Forth implementation with WASM support"
+license = "BSD-2-Clause"
+repository = "https://codeberg.org/josias/fifth"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+miniforth = { path = "../miniforth" }
+js-sys = "0.3.56"
+wasm-bindgen = "0.2"
+
+[dependencies.web-sys]
+version = "0.3"
+features = [
+  'Document',
+  'Element',
+  'HtmlElement',
+  'HtmlInputElement',
+  'Node',
+  'Window',
+  'EventTarget',
+  'Event',
+  'Attr',
+  'console',
+]
+
